@@ -8,7 +8,7 @@ import org.elasticsearch.common.settings.Settings
 import org.elasticsearch.common.transport.InetSocketTransportAddress
 
 object ElasticSearchManager {
-  
+
   private val port = 9300
 
   private val nodes = List("localhost")
