@@ -1,7 +1,14 @@
-name := "text-search"
+lazy val root = (project in file("."))
+  .settings (
+    name          := "Search Loader",
+    organization  := "net.pb",
+    scalaVersion  := "2.12.4",
+    version       := "latest"
+  )
 
-version := "0.1"
+resolvers += Resolver.url("bintray-sbt-plugins", url("https://dl.bintray.com/sbt/sbt-plugin-releases/"))(Resolver.ivyStylePatterns)
 
-scalaVersion := "2.12.4"
-
-libraryDependencies += "org.elasticsearch" % "elasticsearch" % "2.3.2"
+libraryDependencies ++= Seq(
+  "org.elasticsearch" % "elasticsearch" % "2.3.2",
+  "org.scalatest" %% "scalatest" % "3.0.1" % "test"
+)

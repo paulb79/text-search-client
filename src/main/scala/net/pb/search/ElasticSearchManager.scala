@@ -15,7 +15,7 @@ object ElasticSearchManager {
 
   private val addresses = nodes.map { host => new InetSocketTransportAddress(InetAddress.getByName(host), port) }
 
-  lazy private val settings = Settings.settingsBuilder()
+  lazy private val settings = Settings.builder()
     .put("cluster.name", "elasticsearch")
     .build()
 
